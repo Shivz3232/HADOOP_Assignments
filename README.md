@@ -4,7 +4,7 @@
 * Run the following command from **/Assigment1/**
 ```shell
 $mkdir task1
-$javac -cp ".:./lib/*" -d task1 task1.java                                                                        //".;./lib/*" for Windows
+$javac -cp ".:./lib/*" -d task1 task1.java                                            //".;./lib/*" for Windows
 $jar -cvf task1.jar -C task1/ .
 $Hadoop jar task1.jar hadoop.task1 <input directory> <output directory> <inputString>
 ```
