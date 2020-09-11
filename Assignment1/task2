@@ -102,7 +102,7 @@ public class task1 extends Configured implements Tool {
 
                 ans = Math.sqrt(ans2[0]) + Math.sqrt(ans2[1]);
                 
-                if (ans > jsonObject.get("k") 
+                if (ans > jsonObject.get("k"))
                 {
                     context.write(countrycodefinal, one);
                 } 
