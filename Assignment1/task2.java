@@ -175,6 +175,7 @@ public class task2 extends Configured implements Tool {
         Configuration conf = new Configuration();
         conf.set("inputString", inputString);
         conf.setInt("inputk", inputk);
+        conf.set("mapreduce.output.textoutputformat.separator", ",");
 
         Job job = Job.getInstance(conf, "Recognized Words");
 

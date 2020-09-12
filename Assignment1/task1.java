@@ -105,7 +105,7 @@ public class task1 extends Configured implements Tool {
         }
     }
 
-    public static class didRecognizeReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class didRecognizeReducer extends Reducer<Text, IntWritable, NullWritable, IntWritable> {
         private IntWritable result = new IntWritable();
         // private Text lol = new Text();
 
@@ -116,7 +116,8 @@ public class task1 extends Configured implements Tool {
                 sum += val.get();
             }
             result.set(sum);
-            context.write(key, result);
+            NullWritable nw = NullWritable.get();
+            context.write(nw, result);
         }
     }
 
@@ -132,10 +133,10 @@ public class task1 extends Configured implements Tool {
         job.setJarByClass(task1.class);
 
         job.setMapperClass(wordRecognizedMapper.class);
-        job.setCombinerClass(didRecognizeReducer.class);
+        // job.setCombinerClass(didRecognizeReducer.class);
         job.setReducerClass(didRecognizeReducer.class);
 
-        job.setOutputKeyClass(Text.class);
+        job.setOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(IntWritable.class);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
