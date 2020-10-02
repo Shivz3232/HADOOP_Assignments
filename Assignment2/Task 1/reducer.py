@@ -39,17 +39,12 @@ file_object = open("v.txt", "w")
 
 # Print all the nodes which are present as keys with a page rank of 1 to the file
 for i in sorted(dict_nodes_incoming.keys()):
-    file_object.write("%d, 1\n" % (int(i)))
+    file_object.write("%d,1\n" % (int(i)))
 
 # Close the file descriptor
 file_object.close()
-
-# Initiate the file descriptor for the 'adj_list' file
-file_object = open("adj_list.txt", "w")
 
 # Print the dictionary to file delimited by '\n'
 for i in sorted(dict_nodes_incoming.keys()):
-    file_object.write("%d    %s\n" % (int(i), dict_nodes_incoming[i]))
-
-# Close the file descriptor
-file_object.close()
+    # file_object.write("%d    %s\n" % (int(i), dict_nodes_incoming[i]))
+    sys.stdout.write("%d\t%s\n" % (int(i), ','.join(map(lambda x: str(x), dict_nodes_incoming[i]))))
