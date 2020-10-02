@@ -1,5 +1,6 @@
 ﻿# HADOOP_Assignments
-#### How to compile and run any task:
+### How to compile and run any task:
+#### Java
 * Add all the jars in the lib file of the assignment x, to /home/hadoop-3.2.0/share/hadoop/mapreduce/lib
 * Run the following command from **/Assigment1/**
 ```shell
